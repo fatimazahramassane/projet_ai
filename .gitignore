@@ -1,0 +1,123 @@
+# =============================================================================
+# APS Failure at Scania Trucks — .gitignore
+# =============================================================================
+
+# --- Données (trop volumineuses / à télécharger localement) ---
+data/raw/**/*.csv
+data/raw/**/*.zip
+data/raw/**/*.7z
+data/raw/**/*.tar
+data/raw/**/*.gz
+data/processed/*
+!data/processed/.gitkeep
+!data/raw/**/.gitkeep
+!data/raw/**/aps_failure_description.txt
+
+# --- Modèles et artefacts ML ---
+models/*
+!models/.gitkeep
+*.pkl
+*.pickle
+*.joblib
+*.h5
+*.hdf5
+*.onnx
+*.pt
+*.pth
+*.cbm
+*.json
+!package.json
+!tsconfig.json
+optuna_study.db
+*.sqlite
+*.db
+
+# --- Rapports générés (régénérables via notebooks) ---
+reports/figures/*.png
+reports/figures/*.pdf
+reports/figures/*.svg
+reports/figures/*.html
+reports/tables/*.csv
+reports/tables/*.xlsx
+reports/tables/*.parquet
+!reports/figures/.gitkeep
+!reports/tables/.gitkeep
+
+# --- Python ---
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+.nox/
+.mypy_cache/
+.dmypy.json
+dmypy.json
+.pytype/
+.ruff_cache/
+
+# --- Jupyter ---
+.ipynb_checkpoints/
+*/.ipynb_checkpoints/
+profile_default/
+ipython_config.py
+
+# --- Environnements virtuels ---
+.env
+.venv/
+venv/
+ENV/
+env/
+.python-version
+
+# --- IDE / OS ---
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# --- Logs ---
+*.log
+logs/
+wandb/
+mlruns/
+.neptune/
+
+# --- Secrets ---
+.env.local
+.env.*.local
+secrets/
+credentials.json
+*.pem
+
+# --- Fichiers > 50 Mo (sécurité GitHub) ---
+# Si vous devez versionner de gros fichiers, utilisez Git LFS :
+#   git lfs install
+#   git lfs track "*.csv"
